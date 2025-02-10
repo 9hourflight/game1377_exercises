@@ -2,11 +2,17 @@
 {
     internal class Program
     {
+        
         static void Main(string[] args)
         {
-            
-            //InputSwitch();
+            int[] sampleArrayInt = { 2, 4, 6, 8, 10 };
+            float[] floatArray = { 1.1f, 2.2f, 3.3f, 4.4f, 5.5f };
+            //double[] doubleArray = {}
+            InputSwitch();
             ArraysAndLoops();
+            OutputArrayInt(sampleArrayInt);
+            Overload(floatArray);
+            Overload();
         }
 
         static void InputSwitch()
