@@ -7,12 +7,16 @@
         {
             int[] sampleArrayInt = { 2, 4, 6, 8, 10 };
             float[] floatArray = { 1.1f, 2.2f, 3.3f, 4.4f, 5.5f };
-            //double[] doubleArray = {}
+            double[] doubleArray = { 1.1111111, 2.2222222, 3.3333333, 4.4444444, 5.5555555 };
             InputSwitch();
             ArraysAndLoops();
             OutputArrayInt(sampleArrayInt);
             Overload(floatArray);
-            Overload();
+            Overload(doubleArray);
+            AverageIntToFloat(sampleArrayInt);
+            AverageOverload(floatArray);
+            AverageOverload(doubleArray);
+            RandomArray();
         }
 
         static void InputSwitch()
@@ -74,14 +78,16 @@
                     continue;
                 }
                 Console.WriteLine(allValues[i]);
+                
             }
-            for (int i = 0; i < allValues.Length; i++)
+            Console.WriteLine();
+            for (int i = 3; i < allValues.Length; i++)
             {
                 if (i % 3 != 0)
                 {
                     continue;
                 }
-                Console.Write(allValues[i]);
+                Console.WriteLine(allValues[i-1]);
             }
             Console.WriteLine("Enter three numbers.");
             int arraySize = Convert.ToInt32(Console.ReadLine());
@@ -117,14 +123,14 @@
                 Console.WriteLine(doubleArray[i]);
             }
         }
-        static void AverageIntToFloat(int[]sampleArray)
+        static void AverageIntToFloat(int[]sampleArrayInt)
         {
             float totalValue = 0;
-            for (int i = 0; i < sampleArray.Length; i++)
+            for (int i = 0; i < sampleArrayInt.Length; i++)
             {
-                totalValue += sampleArray[i];
+                totalValue += sampleArrayInt[i];
             }
-            float averageValue = totalValue / Convert.ToSingle(sampleArray.Length);
+            float averageValue = totalValue / Convert.ToSingle(sampleArrayInt.Length);
             Console.WriteLine("The average value of the array is " + averageValue);
         }
         static void AverageOverload(float[]sampleArray)
@@ -137,7 +143,17 @@
             double averageValue = totalValue / sampleArray.Length;
             Console.WriteLine("The average value of the array is " + averageValue);
         }
-        
+        static void AverageOverload(double[] sampleArray)
+        {
+            double totalValue = 0;
+            for (int i = 0; i < sampleArray.Length; i++)
+            {
+                totalValue += sampleArray[i];
+            }
+            double averageValue = totalValue / sampleArray.Length;
+            Console.WriteLine("The average value of the array is " + averageValue);
+        }
+
         static void RandomArray()
         {
             Console.WriteLine("Enter three numbers.");
@@ -151,6 +167,7 @@
             {
                 randomArray[i] = rnd.Next(rangeMin, rangeMax);
             }
+            //Console.WriteLine(randomArray);
         }
     }
 }
