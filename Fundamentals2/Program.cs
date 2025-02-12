@@ -166,8 +166,9 @@
             for (int i = 0; i < randomArray.Length; i++)
             {
                 randomArray[i] = rnd.Next(rangeMin, rangeMax);
+                Console.Write(randomArray[i]);
             }
-            //Console.WriteLine(randomArray);
+            
         }
     }
 }
